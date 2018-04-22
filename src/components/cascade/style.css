@@ -1,0 +1,75 @@
+.cascade {
+  width: 200px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.dropdown {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  white-space: nowrap;
+  max-height: 200px;
+  overflow: auto;
+  margin: 5px 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  position: absolute;
+  z-index: 900;
+}
+
+.caspanel-wrap {
+  display: inline-block;
+}
+
+.caspanel-menu {
+  display: inline-block;
+  min-width: 100px;
+  height: 180px;
+  margin: 0;
+  padding: 5px 0!important;
+  vertical-align: top;
+  list-style: none;
+  border-right: 1px solid #e9eaec;
+  overflow: auto;
+}
+
+.cascade input {
+  width: 100%;
+  height: 32px;
+  padding: 4px 7px;
+  font-size: 12px;
+  border: 1px solid #dddee1;
+  border-radius: 4px;
+  color: #495060;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.casitem {
+  position: relative;
+  margin: 0;
+  line-height: normal;
+  padding: 7px 24px;
+  color: #495060;
+  font-size: 12px!important;
+  white-space: nowrap;
+  list-style: none;
+  cursor: pointer;
+}
+
+.casitem.active {
+  background-color: #F3F3FA;
+  color: #2d8cf0;
+}
+
+.casitem-icon {
+  font-size: 12px;
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  margin-top: -6px;
+  font-style: normal;
+}
