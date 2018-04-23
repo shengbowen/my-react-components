@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Cascade from './components/cascade/cascade';
-
-import logo from './logo.svg';
-import './App.css';
+import Cascade from '../components/cascade/cascade';
 
 class App extends Component {
   render() {

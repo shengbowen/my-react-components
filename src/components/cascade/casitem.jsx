@@ -19,7 +19,7 @@ class Casitem extends Component {
     const clstring = `casitem${selected ? ' active' : ''}`;
 
     return (
-      <li className={ clstring } onClick={ this.handleClick }>
+      <li className={ clstring } onClick={ this.handleClick } onMouseEnter={ this.props.handleSelect }>
         { data.label }
         { hasChild && <i className="casitem-icon"> > </i> }
         { this.props.children }

@@ -54,7 +54,7 @@ class Cascade extends Component {
   }
 
   componentWillUnmount() {
-    document.addEventListener('click', this.clickOutSide);
+    document.removeEventListener('click', this.clickOutSide);
   }
 
   render() {
