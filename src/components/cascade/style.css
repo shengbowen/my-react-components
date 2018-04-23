@@ -10,7 +10,7 @@
   left: 0;
   white-space: nowrap;
   max-height: 200px;
-  overflow: auto;
+  overflow: visible;
   margin: 5px 0;
   background-color: #fff;
   box-sizing: border-box;
@@ -22,9 +22,13 @@
 
 .caspanel-wrap {
   display: inline-block;
+  height: 200px;
 }
 
 .caspanel-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: inline-block;
   min-width: 100px;
   height: 180px;
@@ -33,7 +37,7 @@
   vertical-align: top;
   list-style: none;
   border-right: 1px solid #e9eaec;
-  overflow: auto;
+  overflow: visible;
 }
 
 .cascade input {
@@ -49,7 +53,7 @@
 }
 
 .casitem {
-  position: relative;
+  /* position: relative; */
   margin: 0;
   line-height: normal;
   padding: 7px 24px;
@@ -61,13 +65,13 @@
 }
 
 .casitem.active {
-  background-color: #F3F3FA;
+  /* background-color: #F3F3FA; */
   color: #2d8cf0;
 }
 
 .casitem-icon {
   font-size: 12px;
-  position: absolute;
+  /* position: absolute; */
   right: 15px;
   top: 12px;
   margin-top: -6px;

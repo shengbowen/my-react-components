@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 class Casitem extends Component {
 
   render() {
-    const { data, selected } = this.props;
+    const { data, selected, hasChild } = this.props;
 
-    const clstring = `casitem${data.value === selected ? ' active' : ''}`;
+    const clstring = `casitem${selected ? ' active' : ''}`;
 
     return (
-      <li className={ clstring } onClick={ () => this.props.handleSelect(data.value) }>
+      <li className={ clstring } onClick={ this.props.handleSelect }>
         { data.label }
-        <i className="casitem-icon"> > </i>
+        { hasChild && <i className="casitem-icon"> > </i> }
+        { this.props.children }
       </li>
     );
   }
