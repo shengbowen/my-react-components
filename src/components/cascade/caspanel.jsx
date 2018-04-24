@@ -43,7 +43,7 @@ class Caspanel extends PureComponent {
    */
   renderMenu(options, depthLevel = 0) {
 
-    const menu = options.map(option => {
+    const menu = options.map((option, index) => {
       const hasChild = option.children && option.children.length > 0;
       const isSelected = this.state.selectedIds[depthLevel] === option.value;
 
@@ -59,7 +59,7 @@ class Caspanel extends PureComponent {
         <Casitem data={ option }
                         selected={ isSelected }
                         handleSelect={ this.handleSelectId(option.value, depthLevel, option.label, hasChild) }
-                        key={ option.value }
+                        key={ option.value + index  }
                         hasChild={ hasChild }
                         handleClose={this.props.handleClose}>
           { subMenu }
