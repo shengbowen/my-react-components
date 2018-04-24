@@ -5,7 +5,7 @@ import mockData from '../components/cascade/mock';
 class Home extends Component {
   render() {
     return (
-      <Cascade separator="/" data={ mockData }/>
+      <Cascade data={ mockData }/>
     );
   }
 }

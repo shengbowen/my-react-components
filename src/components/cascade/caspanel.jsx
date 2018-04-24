@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Casitem from './casitem';
 
-class Caspanel extends Component {
+class Caspanel extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -45,10 +45,11 @@ class Caspanel extends Component {
 
     const menu = options.map(option => {
       const hasChild = option.children && option.children.length > 0;
+      const isSelected = this.state.selectedIds[depthLevel] === option.value;
 
       let subMenu;
       // debugger
-      if ((this.state.selectedIds[depthLevel] === option.value) && hasChild) {
+      if (isSelected && hasChild) {
         const newDepthLevel = depthLevel + 1;
         // debugger;
         subMenu = this.renderMenu(option.children, newDepthLevel);
@@ -56,12 +57,11 @@ class Caspanel extends Component {
 
       return (
         <Casitem data={ option }
-                        selected={ this.state.selectedIds[depthLevel] === option.value }
+                        selected={ isSelected }
                         handleSelect={ this.handleSelectId(option.value, depthLevel, option.label, hasChild) }
                         key={ option.value }
                         hasChild={ hasChild }
-                        handleClose={this.props.handleClose}
-                        >
+                        handleClose={this.props.handleClose}>
           { subMenu }
         </ Casitem>
       )
@@ -77,8 +77,8 @@ class Caspanel extends Component {
 
   render() {
     const { data } = this.props;
-
-    const width = this.state.selectedIds.length === 0 ? '100px' : `${100 * (this.state.hasChild ? this.state.selectedIds.length + 1 : this.state.selectedIds.length)}px`;
+    const { selectedIds, hasChild } = this.state;
+    const width =selectedIds.length === 0 ? '100px' : `${100 * (hasChild ? selectedIds.length + 1 : selectedIds.length)}px`;
 
     return (
       <div className="caspanel-wrap" style={{ width }}>

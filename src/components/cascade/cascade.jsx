@@ -48,7 +48,6 @@ class Cascade extends Component {
   }
 
   componentDidMount() {
-    console.log(this.cas);
     document.addEventListener('click', this.clickOutSide);
   }
 
@@ -69,11 +68,13 @@ class Cascade extends Component {
 }
 
 Cascade.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object),
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  separator: PropTypes.string.isRequired,
 };
 
 Cascade.defaultProps = {
   data: [],
+  separator: '/'
 };
 
 export default Cascade;

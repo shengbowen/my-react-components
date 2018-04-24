@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
-class Casitem extends Component {
+class Casitem extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -26,6 +27,13 @@ class Casitem extends Component {
       </li>
     );
   }
+}
+
+Casitem.propTypes = {
+  handleSelect: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
+  selected: PropTypes.bool,
+  hasChild: PropTypes.bool
 }
 
 export default Casitem;
