@@ -12,7 +12,7 @@ function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
 }
 
-class AddForm extends React.Component {
+class AddForm extends Component {
   constructor(props) {
     super(props);
 

@@ -7,7 +7,6 @@ class Caspanel extends Component {
     super(props);
 
     this.state = {
-      sublist: [],
       selectedIds: [],
       selectedLables: [],
       depthLevel: 0,
@@ -78,7 +77,6 @@ class Caspanel extends Component {
 
   render() {
     const { data } = this.props;
-    const { sublist, selected } = this.state;
 
     const width = this.state.selectedIds.length === 0 ? '100px' : `${100 * (this.state.hasChild ? this.state.selectedIds.length + 1 : this.state.selectedIds.length)}px`;
 

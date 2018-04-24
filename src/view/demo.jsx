@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Cascade from '../components/cascade/cascade';
 
 import AddForm from './form';
-import mockData from '../components/cascade/mock';
 
 class Demo extends Component {
   constructor(props) {

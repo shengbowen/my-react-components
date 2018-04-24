@@ -11,7 +11,7 @@ import './reset.css';
 import Home from './view/home';
 import Demo from './view/demo';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 const routes = [
   {
