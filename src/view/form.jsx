@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import { Select, Form, Icon, Input, Button } from 'antd';
 
+import { actions } from '../actions/data';
+import store from '../store';
+
 const Option = Select.Option;
 const FormItem = Form.Item;
 
@@ -26,9 +29,12 @@ class AddForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        // const { dispatch } = this.props;
+        // debugger;
+        store.dispatch(actions.addChild(this.state.selectedCity, values.value, values.label));
       }
     });
   }
@@ -93,4 +99,13 @@ class AddForm extends React.Component {
 }
 
 const WrappedAddForm = Form.create({})(AddForm);
+
+// const mapStateToProps = (state) => {
+//   return {
+//     ...state.data
+//   }
+// };
+
+// export default connect(mapStateToProps)(Demo);
+
 export default WrappedAddForm;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Caspanel from './caspanel';
-import mockData from './mock';
 
 import './style.css';
 
@@ -11,7 +10,7 @@ class Cascade extends Component {
     super(props);
 
     this.state = {
-      show: false,
+      show: true,
       selectedIds: [],
       selectLabels: [],
     };
@@ -74,7 +73,7 @@ Cascade.propTypes = {
 };
 
 Cascade.defaultProps = {
-  data: mockData,
+  data: [],
 };
 
 export default Cascade;

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Cascade from '../components/cascade/cascade';
+import mockData from '../components/cascade/mock';
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
-      <Cascade separator="/" />
+      <Cascade separator="/" data={ mockData }/>
     );
   }
 }
 
-export default App;
+export default Home;
