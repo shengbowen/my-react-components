@@ -10,6 +10,7 @@ import './index.css';
 import './reset.css';
 import Home from './view/home';
 import Demo from './view/demo';
+import PullRefresh from './view/pullrefresh';
 
 const { Header, Content, Sider } = Layout;
 
@@ -17,11 +18,21 @@ const routes = [
   {
     path: '/',
     exact: true,
-    main: Home
+    main: Home,
+    name: 'Home',
+    icon: 'user',
   },
   {
     path: '/demo',
-    main: Demo
+    main: Demo,
+    name: 'Cascade',
+    icon: 'video-camera'
+  },
+  {
+    path: '/pullrefresh',
+    main: PullRefresh,
+    name: 'PullRefresh',
+    icon: 'user',
   }
 ];
 
@@ -31,14 +42,14 @@ ReactDOM.render(
       <Layout style={{ height: '100%' }}>
         <Sider style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-              <Icon type="user" />
-              <span className="nav-text"><Link to="/" style={{width: '80%', display: 'inline-block'}}>Home</Link></span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="video-camera" />
-              <span className="nav-text"><Link to="/demo" style={{width: '80%', display: 'inline-block'}}>demo</Link></span>
-            </Menu.Item>
+          {
+            routes.map((route, index) => (
+              <Menu.Item key={index}>
+                <Icon type= {route.icon} />
+                <span className="nav-text"><Link to={route.path} style={{width: '80%', display: 'inline-block'}}>{ route.name }</Link></span>
+              </Menu.Item>
+            ))
+          }
           </Menu>
         </Sider>
 
